@@ -23,6 +23,6 @@ module.exports = {
   },
   buildOptions: {
     out: "docs",
-    baseUrl: "/role-preview-for-discord"
+    baseUrl: ""
   },
 };
