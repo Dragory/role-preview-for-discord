@@ -66,7 +66,7 @@ const defaultRoles: Role[] = [
   {
     id: 2,
     name: "Example 2",
-    color: "#2ECC71",
+    color: "#1EAB42",
   },
 ];
 
