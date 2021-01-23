@@ -190,7 +190,8 @@ export function App() {
         </p>
         <p className="twemoji-info">
           <span>
-            Twemoji are used under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.{" "}
+            <a href="https://twemoji.twitter.com/">Twemoji</a> are used under the{" "}
+            <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.{" "}
           </span>
           <Twemoji options={{ folder: "svg", ext: ".svg" }} noWrapper={true}>
             <span>
