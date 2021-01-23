@@ -145,6 +145,7 @@ export function App() {
 
       <div className="config">
         <h2>Roles</h2>
+        <div className="mobile-scroll-hint">Scroll further below to see the preview!</div>
         <RoleConfigurator roles={roles} setRoles={setRoles} />
 
         <h2>Simulate color blindness</h2>

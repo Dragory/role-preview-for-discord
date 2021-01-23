@@ -7,7 +7,6 @@
   overflow: hidden;
 
   display: grid;
-  grid-template-columns: auto 240px;
 
   --role-color: var(--color);
 }
@@ -124,8 +123,12 @@
 }
 
 @media (min-width: 640px) {
+  /* Show sidebar on landscape mobile and up */
+  .PreviewPane {
+    grid-template-columns: auto 240px;
+  }
+
   .PreviewPane .sidebar {
-    /* Show on landscape mobile and up */
     display: block;
   }
 }

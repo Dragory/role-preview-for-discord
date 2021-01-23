@@ -49,6 +49,11 @@
   margin-top: 0;
 }
 
+.App > .config .mobile-scroll-hint {
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
 .App > .info {
   grid-area: info;
 }
@@ -82,5 +87,9 @@
       "preview info";
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto minmax(1px, min-content) auto;
+  }
+
+  .App > .config .mobile-scroll-hint {
+    display: none;
   }
 }
