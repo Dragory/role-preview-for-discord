@@ -48,7 +48,7 @@
       ]
     },
     "dist/App.css": {
-      "bytes": 1076,
+      "bytes": 1208,
       "imports": []
     },
     "dist/PreviewPane.css": {
@@ -184,7 +184,7 @@
       ]
     },
     "dist/App.js": {
-      "bytes": 6576,
+      "bytes": 7345,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -208,6 +208,10 @@
         },
         {
           "path": "dist/colorBlind.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react-twemoji.js",
           "kind": "import-statement"
         }
       ]
@@ -302,7 +306,7 @@
           "bytesInOutput": 842
         },
         "dist/App.js": {
-          "bytesInOutput": 3708
+          "bytesInOutput": 4196
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -311,7 +315,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 320932
+      "bytes": 321420
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
@@ -320,7 +324,7 @@
           "bytesInOutput": 449
         },
         "dist/App.css": {
-          "bytesInOutput": 784
+          "bytesInOutput": 888
         },
         "dist/ColorBlindModes.css": {
           "bytesInOutput": 37
@@ -332,7 +336,7 @@
           "bytesInOutput": 632
         }
       },
-      "bytes": 3922
+      "bytes": 4026
     }
   }
 }
