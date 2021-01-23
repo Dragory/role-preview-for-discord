@@ -36,7 +36,7 @@ function saveState(state: SaveableState) {
   const encoded = btoa(JSON.stringify(state));
   const hashVars = getHashVars();
   hashVars.state = encoded;
-  window.location.hash = stringifyHashVars(hashVars);
+  window.history.replaceState(null, "", stringifyHashVars(hashVars));
 }
 
 function loadState(): SaveableState | null {
