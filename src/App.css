@@ -77,7 +77,7 @@
   .App {
     /*  Desktop layout */
     grid-template-areas:
-      "title ."
+      "title title"
       "preview config"
       "preview info";
     grid-template-columns: 2fr 1fr;

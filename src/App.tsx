@@ -133,7 +133,13 @@ export function App() {
         <p>
           Preview role colors and check for possible issues with contrast and color schemes!
           <br />
-          Copy the website address to share your changes!
+          📋 Copy the website address to share your changes!
+        </p>
+        <p>
+          <strong>Note:</strong> It's normal to only reach "Passable contrast" when optimizing for both dark and light
+          theme.
+          <br />
+          See "Info" below for more details on contrast.
         </p>
       </div>
 
