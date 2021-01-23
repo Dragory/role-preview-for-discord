@@ -1,8 +1,8 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: { url: "/", static: true },
-    src: { url: "/dist" },
+    public: { url: "/role-preview-for-discord/", static: true },
+    src: { url: "/role-preview-for-discord/dist" },
   },
   plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-dotenv", "@snowpack/plugin-typescript"],
   routes: [
