@@ -63,6 +63,16 @@
   word-break: break-all;
 }
 
+.App > .info .twemoji-info .emoji {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 @media (min-width: 1000px) {
   .App {
     /*  Desktop layout */

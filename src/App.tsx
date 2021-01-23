@@ -5,6 +5,7 @@ import type { Role } from "./Role";
 import { RoleConfigurator } from "./RoleConfigurator";
 import { ColorBlindModes } from "./ColorBlindModes";
 import { ColorBlindMode, colorBlindModes as allColorBlindModes } from "./colorBlind";
+import Twemoji from "react-twemoji";
 
 interface SaveableState {
   roles: Role[];
@@ -186,6 +187,16 @@ export function App() {
           <a className="allow-break" href="https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/">
             https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/
           </a>
+        </p>
+        <p className="twemoji-info">
+          <span>
+            Twemoji are used under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.{" "}
+          </span>
+          <Twemoji options={{ folder: "svg", ext: ".svg" }} noWrapper={true}>
+            <span>
+              The website icon is a resized version of the <span className="nowrap">🛠 icon.</span>{" "}
+            </span>
+          </Twemoji>
         </p>
       </div>
     </div>
