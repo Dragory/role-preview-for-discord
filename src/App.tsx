@@ -44,12 +44,12 @@ function loadState(): SaveableState | null {
   return hashVars.state ? JSON.parse(atob(hashVars.state)) : null;
 }
 
-const useEffectNotFirst = (effect: any, deps: any[]) => {
-  const firstRun = useRef(false);
+const useEffectAfterNCalls = (n: number, effect: any, deps: any[]) => {
+  const callN = useRef(0);
 
   useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = true;
+    callN.current++;
+    if (callN.current <= n) {
       return;
     }
 
@@ -112,9 +112,14 @@ export function App() {
     };
   }
 
-  useEffectNotFirst(() => {
-    saveState(getSaveableState());
-  }, [roles, colorBlindModes]);
+  // Skip the initial call
+  useEffectAfterNCalls(
+    1,
+    () => {
+      saveState(getSaveableState());
+    },
+    [roles, colorBlindModes],
+  );
 
   function reset() {
     window.location.hash = "#";
