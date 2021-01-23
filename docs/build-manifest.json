@@ -69,7 +69,7 @@
       ]
     },
     "_snowpack/pkg/react-twemoji.js": {
-      "bytes": 69977,
+      "bytes": 69946,
       "imports": [
         {
           "path": "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js",
@@ -278,7 +278,7 @@
           "bytesInOutput": 707
         },
         "_snowpack/pkg/react-twemoji.js": {
-          "bytesInOutput": 25320
+          "bytesInOutput": 25305
         },
         "dist/PreviewPane.js": {
           "bytesInOutput": 1097
@@ -311,7 +311,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 320947
+      "bytes": 320932
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
