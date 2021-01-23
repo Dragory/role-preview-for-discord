@@ -1,4 +1,6 @@
 {
+  "name": "role-preview-for-discord",
+  "private": true,
   "scripts": {
     "dev": "snowpack dev",
     "build": "snowpack build",
