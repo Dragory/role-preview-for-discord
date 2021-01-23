@@ -1,25 +1,19 @@
-# New Project
+# Role Preview for Discord
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+This is a tool that allows you to preview Discord role colors on the dark and light theme simultaneously,
+optionally also applying various color blindness filters to create accessible roles.
 
-## Available Scripts
+Visit [https://dragory.github.io/role-preview-for-discord](https://dragory.github.io/role-preview-for-discord) to use the tool!
 
-### npm start
+## Development
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+### Scripts
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+#### npm run dev
 
-### npm run build
+Run the development server that automatically watches for file changes.
+Open [http://localhost:8080](http://localhost:8080) to view the page.
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+#### npm run build
 
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.js` config file.
-
-### npm test
-
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+Build the app to the `/docs` folder (for GitHub Pages)
