@@ -1,0 +1,131 @@
+.PreviewPane {
+  background-color: var(--bg-color);
+  color: var(--color);
+  border-radius: 8px;
+  margin: 0 0 20px;
+  box-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: auto 240px;
+
+  --role-color: var(--color);
+}
+
+.PreviewPane.dark {
+  --bg-color: #36393f;
+  --color: #dcddde;
+  --sidebar-bg-color: #2f3136;
+  --sidebar-color: rgba(255, 255, 255, 0.4);
+  --message-divider-color: rgba(6, 6, 7, 0.08);
+}
+
+.PreviewPane.light {
+  --bg-color: #fff;
+  --color: #2e3338;
+  --sidebar-bg-color: #f3f3f3;
+  --sidebar-color: #6a7480;
+  --message-divider-color: rgba(6, 6, 7, 0.08);
+}
+
+.PreviewPane .name {
+  font-size: 107%;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.PreviewPane .avatar-image {
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.PreviewPane .messages {
+  padding: 0 20px;
+}
+
+.PreviewPane .message {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 60px auto;
+}
+
+.PreviewPane .message .name {
+  grid-column: 2;
+  grid-row: 1;
+  padding-bottom: 2px;
+  color: var(--role-color);
+}
+
+.PreviewPane .message .body {
+  grid-column: 2;
+  grid-row: 2;
+}
+.PreviewPane .message .body .emoji {
+  width: 24px;
+  vertical-align: middle;
+}
+
+.PreviewPane .message .avatar {
+  grid-column: 1;
+  grid-row: span 2;
+}
+
+.PreviewPane .message .avatar-image {
+  width: 40px;
+  height: 40px;
+  background-color: var(--role-color);
+}
+
+.PreviewPane .message + .message {
+  border-top: 1px solid var(--message-divider-color);
+}
+
+.PreviewPane .sidebar {
+  background-color: var(--sidebar-bg-color);
+  padding: 20px 8px 20px 16px;
+
+  /* Hide on portrait mobile */
+  display: none;
+}
+
+.PreviewPane .sidebar .title {
+  color: var(--sidebar-color);
+  text-transform: uppercase;
+  font-size: 90%;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.PreviewPane .sidebar .member {
+  display: grid;
+  grid-template-columns: 40px auto;
+  padding-bottom: 8px;
+}
+
+.PreviewPane .sidebar .member .name {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  color: var(--role-color);
+}
+
+.PreviewPane .sidebar .member .avatar {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.PreviewPane .sidebar .member .avatar-image {
+  width: 30px;
+  height: 30px;
+  background-color: var(--role-color);
+}
+
+@media (min-width: 640px) {
+  .PreviewPane .sidebar {
+    /* Show on landscape mobile and up */
+    display: block;
+  }
+}

@@ -4,13 +4,17 @@
   "scripts": {
     "dev": "snowpack dev",
     "build": "snowpack build",
+    "clear-cache": "snowpack --reload",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
+    "color-blind": "^0.1.1",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-color": "^2.19.3",
+    "react-dom": "^17.0.0",
+    "react-twemoji": "^0.3.0"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.0.5",
@@ -21,6 +25,7 @@
     "@types/chai": "^4.2.13",
     "@types/mocha": "^8.2.0",
     "@types/react": "^17.0.0",
+    "@types/react-color": "^3.0.4",
     "@types/react-dom": "^17.0.0",
     "@types/snowpack-env": "^2.3.2",
     "@web/test-runner": "^0.12.0",

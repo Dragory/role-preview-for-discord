@@ -1,41 +1,193 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./App.css";
+import { PreviewPane } from "./PreviewPane";
+import type { Role } from "./Role";
+import { RoleConfigurator } from "./RoleConfigurator";
+import { ColorBlindModes } from "./ColorBlindModes";
+import { ColorBlindMode, colorBlindModes as allColorBlindModes } from "./colorBlind";
 
-interface AppProps {}
+interface SaveableState {
+  roles: Role[];
+  colorBlindModes: string[];
+}
 
-function App({}: AppProps) {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
+function getHashVars() {
+  return window.location.hash
+    .slice(2) // Remove #? at the beginning
+    .split("&")
+    .filter(Boolean)
+    .reduce((obj, hashVar) => {
+      const [prop, value] = hashVar.split("=");
+      obj[prop] = value;
+      return obj;
+    }, {} as any);
+}
+
+function stringifyHashVars(obj: any) {
+  const varStr = Object.entries(obj)
+    .map(([prop, value]) => `${prop}=${value}`)
+    .join("&");
+
+  return varStr ? `#?${varStr}` : "";
+}
+
+function saveState(state: SaveableState) {
+  const encoded = btoa(JSON.stringify(state));
+  const hashVars = getHashVars();
+  hashVars.state = encoded;
+  window.location.hash = stringifyHashVars(hashVars);
+}
+
+function loadState(): SaveableState | null {
+  const hashVars = getHashVars();
+  return hashVars.state ? JSON.parse(atob(hashVars.state)) : null;
+}
+
+const useEffectNotFirst = (effect: any, deps: any[]) => {
+  const firstRun = useRef(false);
+
   useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+    if (firstRun.current) {
+      firstRun.current = true;
+      return;
+    }
+
+    effect();
+  }, deps);
+};
+
+const defaultRoles: Role[] = [
+  {
+    id: 1,
+    name: "Example 1",
+    color: "#DC86FF",
+  },
+  {
+    id: 2,
+    name: "Example 2",
+    color: "#2ECC71",
+  },
+];
+
+export function App() {
+  const [roles, setRoles] = useState<Role[]>(JSON.parse(JSON.stringify(defaultRoles)));
+  const [colorBlindModes, setColorBlindModes] = useState<Set<ColorBlindMode>>(new Set());
+  const [importExport, setImportExport] = useState<"import" | "export" | null>(null);
+  const [stateToImport, setStateToImport] = useState("");
+
+  function getColorBlindRoles(mode: ColorBlindMode, roles: Role[]): Role[] {
+    return roles.map((role) => {
+      return {
+        ...role,
+        color: mode.convert(role.color),
+      };
+    });
+  }
+
+  function loadAndApplyState() {
+    const savedState = loadState();
+    if (!savedState) {
+      return;
+    }
+
+    setRoles(savedState.roles);
+
+    const matchingColorBlindModes = allColorBlindModes.filter((mode) => savedState.colorBlindModes.includes(mode.name));
+    setColorBlindModes(new Set(matchingColorBlindModes));
+  }
+
+  useEffect(() => {
+    loadAndApplyState();
+
+    const ref = loadAndApplyState;
+    window.addEventListener("onHashChange", ref);
+    return () => window.removeEventListener("onHashChange", ref);
+  }, []);
+
+  function getSaveableState() {
+    return {
+      roles,
+      colorBlindModes: Array.from(colorBlindModes).map((mode) => mode.name),
+    };
+  }
+
+  useEffectNotFirst(() => {
+    saveState(getSaveableState());
+  }, [roles, colorBlindModes]);
+
+  function reset() {
+    window.location.hash = "#";
+    window.location.reload();
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div className="title">
+        <h1>Role Preview for Discord</h1>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Preview role colors and check for possible issues with contrast and color schemes!
+          <br />
+          Copy the website address to share your changes!
+        </p>
+      </div>
+
+      <div className="config">
+        <h2>Roles</h2>
+        <RoleConfigurator roles={roles} setRoles={setRoles} />
+
+        <h2>Simulate color blindness</h2>
+        <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
+
+        <h2>Reset</h2>
+        <button className="reset" onClick={reset}>
+          Click here to reset
+        </button>
+      </div>
+      <div className="preview">
+        <PreviewPane theme="dark" roles={roles} />
+        <PreviewPane theme="light" roles={roles} />
+
+        {Array.from(colorBlindModes).map((mode) => (
+          <div key={mode.name}>
+            <h2>{mode.name}</h2>
+            <PreviewPane theme="dark" roles={getColorBlindRoles(mode, roles)} />
+            <PreviewPane theme="light" roles={getColorBlindRoles(mode, roles)} />
+          </div>
+        ))}
+      </div>
+      <div className="info">
+        <h2>Info</h2>
+        <p>
+          This tool is created and maintained by <a href="https://github.com/Dragory">Dragory</a>
         </p>
         <p>
-          Page has been open for <code>{count}</code> seconds.
+          <a href="https://github.com/Dragory/role-preview-for-discord">The source code is available on GitHub</a>
         </p>
         <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+          <span>
+            Contrast ratio calculations are based on the{" "}
+            <a href="https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio">WCAG&nbsp;2.0</a> standard.{" "}
+          </span>
+          <span>
+            <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">
+              For an explanation of WCAG&nbsp;2.0 contrast requirements, see this link.
+            </a>{" "}
+          </span>
+          <span>"Good" and "Great" contrast ratios pass level AA contrast requirements. </span>
+          <span>
+            "Passable" passes the <em>minimum</em> contrast level recommended by <em>ISO-9241-3</em> and{" "}
+            <em>ANSI-HFES-100-1988</em> for standard text and vision.{" "}
+          </span>
+          <span>"Poor" does not pass any contrast ratio requirements. </span>
+        </p>
+        <p>
+          <span>Source for the prevalence numbers for the different types of color blindness: </span>
+          <br />
+          <a className="allow-break" href="https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/">
+            https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/
           </a>
         </p>
-      </header>
+      </div>
     </div>
   );
 }
-
-export default App;

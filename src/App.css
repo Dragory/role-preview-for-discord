@@ -1,46 +1,76 @@
 .App {
-  text-align: center;
-}
-.App code {
-  background: #FFF3;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-.App p {
-  margin: 0.4rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-gap: 16px;
+
+  /*  Mobile layout */
+  grid-template-areas:
+    "title"
+    "config"
+    "preview"
+    "info";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App > .title {
+  grid-area: title;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App > .title h1 {
+  font-weight: 400;
+  font-size: 32px;
+  margin: 0.3em 0 0.2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App > .preview {
+  grid-area: preview;
 }
 
-.App-link {
-  color: #61dafb;
+.App > .preview h2 {
+  font-weight: 400;
+  font-size: 28px;
+  margin: 32px 0 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.App > .config {
+  grid-area: config;
+}
+
+.App > .config h2 {
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.App > .config h2:first-child {
+  margin-top: 0;
+}
+
+.App > .info {
+  grid-area: info;
+}
+
+.App > .info h2 {
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.App > .info .allow-break {
+  word-break: break-all;
+}
+
+@media (min-width: 1000px) {
+  .App {
+    /*  Desktop layout */
+    grid-template-areas:
+      "title ."
+      "preview config"
+      "preview info";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto minmax(1px, min-content) auto;
   }
 }
