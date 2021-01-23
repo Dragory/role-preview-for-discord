@@ -48,11 +48,11 @@
       ]
     },
     "dist/App.css": {
-      "bytes": 1212,
+      "bytes": 1358,
       "imports": []
     },
     "dist/PreviewPane.css": {
-      "bytes": 2418,
+      "bytes": 2448,
       "imports": []
     },
     "dist/utils.js": {
@@ -184,7 +184,7 @@
       ]
     },
     "dist/App.js": {
-      "bytes": 7658,
+      "bytes": 7789,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -306,7 +306,7 @@
           "bytesInOutput": 842
         },
         "dist/App.js": {
-          "bytesInOutput": 4441
+          "bytesInOutput": 4540
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -315,7 +315,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 321665
+      "bytes": 321764
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
@@ -324,19 +324,19 @@
           "bytesInOutput": 449
         },
         "dist/App.css": {
-          "bytesInOutput": 892
+          "bytesInOutput": 1006
         },
         "dist/ColorBlindModes.css": {
           "bytesInOutput": 37
         },
         "dist/PreviewPane.css": {
-          "bytesInOutput": 1951
+          "bytesInOutput": 1964
         },
         "dist/RoleConfigurator.css": {
           "bytesInOutput": 632
         }
       },
-      "bytes": 4030
+      "bytes": 4157
     }
   }
 }
