@@ -1,8 +1,8 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: { url: "/role-preview-for-discord/", static: true },
-    src: { url: "/role-preview-for-discord/dist" },
+    public: { url: "/", static: true },
+    src: { url: "/dist" },
   },
   plugins: ["@snowpack/plugin-react-refresh", "@snowpack/plugin-dotenv", "@snowpack/plugin-typescript"],
   routes: [
@@ -23,5 +23,6 @@ module.exports = {
   },
   buildOptions: {
     out: "docs",
+    baseUrl: "/role-preview-for-discord"
   },
 };
