@@ -15,13 +15,13 @@ export function PreviewPane(props: PreviewPaneProps) {
     const contrastRatio = getContrastRatio(color, bgColor);
     const formatted = contrastRatio.toFixed(2);
 
-    if (contrastRatio >= 7) {
+    if (formatted >= "7.00") {
       return `😄 Great contrast (${formatted}:1)`;
-    } else if (contrastRatio >= 4.5) {
+    } else if (formatted >= "4.50") {
       return `🙂 Good contrast (${formatted}:1)`;
-    } else if (contrastRatio >= 3) {
+    } else if (formatted >= "3.00") {
       return `😐 Passable contrast (${formatted}:1)`;
-    } else if (contrastRatio >= 2) {
+    } else if (formatted >= "2.00") {
       return `😨 Lacking contrast (${formatted}:1)`;
     } else {
       return `🚫 Insufficient contrast (${formatted}:1)`;
