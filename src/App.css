@@ -74,11 +74,6 @@
   margin-top: 0;
 }
 
-.App > .main-wrapper > .config .mobile-scroll-hint {
-  margin-top: -6px;
-  margin-bottom: 10px;
-}
-
 .App > .main-wrapper > .tools {
   grid-area: tools;
 }
@@ -141,9 +136,5 @@
       "preview tools";
     grid-template-columns: 2fr 1fr;
     grid-template-rows: min-content min-content 1fr;
-  }
-
-  .App > .main-wrapper > .config .mobile-scroll-hint {
-    display: none;
   }
 }
