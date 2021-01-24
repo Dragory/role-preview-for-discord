@@ -86,9 +86,13 @@ export function App() {
     });
   }
 
-  function loadAndApplyState() {
+  function loadAndApplyState(allowEmptyReset = false) {
     const savedState = loadState();
     if (!savedState) {
+      if (allowEmptyReset) {
+        reset();
+      }
+
       return;
     }
 
@@ -101,7 +105,7 @@ export function App() {
   useEffect(() => {
     loadAndApplyState();
 
-    const ref = loadAndApplyState;
+    const ref = () => loadAndApplyState(true);
     window.addEventListener("hashchange", ref);
     return () => window.removeEventListener("hashchange", ref);
   }, []);
