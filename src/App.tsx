@@ -163,7 +163,9 @@ export function App() {
           url: linkToCopy,
         });
         return;
-      } catch (e) {}
+      } catch (e) {
+        console.log("navigator.share error", e);
+      }
     }
 
     copy(linkToCopy);
