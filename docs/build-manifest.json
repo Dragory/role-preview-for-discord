@@ -76,7 +76,7 @@
       "bytes": 2448,
       "imports": []
     },
-    "dist/utils.js": {
+    "dist/colorUtils.js": {
       "bytes": 974,
       "imports": []
     },
@@ -107,7 +107,7 @@
       ]
     },
     "dist/PreviewPane.js": {
-      "bytes": 2278,
+      "bytes": 2283,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -118,7 +118,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "dist/utils.js",
+          "path": "dist/colorUtils.js",
           "kind": "import-statement"
         },
         {
@@ -267,16 +267,60 @@
         }
       ]
     },
-    "_snowpack/pkg/copy-to-clipboard.js": {
-      "bytes": 4035,
-      "imports": []
-    },
     "_snowpack/pkg/html-to-image.js": {
       "bytes": 36170,
       "imports": []
     },
+    "dist/htmlToImage.js": {
+      "bytes": 201,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/html-to-image.js",
+          "kind": "dynamic-import"
+        }
+      ]
+    },
+    "dist/downloadImage.js": {
+      "bytes": 545,
+      "imports": []
+    },
+    "_snowpack/pkg/copy-to-clipboard.js": {
+      "bytes": 4035,
+      "imports": []
+    },
+    "dist/copyLink.js": {
+      "bytes": 311,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/copy-to-clipboard.js",
+          "kind": "dynamic-import"
+        }
+      ]
+    },
+    "dist/hashVars.js": {
+      "bytes": 518,
+      "imports": []
+    },
+    "dist/saveableState.js": {
+      "bytes": 360,
+      "imports": [
+        {
+          "path": "dist/hashVars.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "dist/utils.js": {
+      "bytes": 270,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/react.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "dist/App.js": {
-      "bytes": 10311,
+      "bytes": 9171,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -307,16 +351,28 @@
           "kind": "import-statement"
         },
         {
-          "path": "_snowpack/pkg/copy-to-clipboard.js",
-          "kind": "import-statement"
-        },
-        {
           "path": "dist/Switch.js",
           "kind": "import-statement"
         },
         {
-          "path": "_snowpack/pkg/html-to-image.js",
-          "kind": "dynamic-import"
+          "path": "dist/htmlToImage.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/downloadImage.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/copyLink.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/saveableState.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/utils.js",
+          "kind": "import-statement"
         }
       ]
     },
@@ -385,7 +441,7 @@
         "dist/PreviewPane.css": {
           "bytesInOutput": 0
         },
-        "dist/utils.js": {
+        "dist/colorUtils.js": {
           "bytesInOutput": 431
         },
         "_snowpack/pkg/common/index-ce016b4a.js": {
@@ -424,11 +480,26 @@
         "dist/ColorBlindModes.js": {
           "bytesInOutput": 803
         },
-        "_snowpack/pkg/copy-to-clipboard.js": {
-          "bytesInOutput": 2153
+        "dist/htmlToImage.js": {
+          "bytesInOutput": 119
+        },
+        "dist/downloadImage.js": {
+          "bytesInOutput": 304
+        },
+        "dist/copyLink.js": {
+          "bytesInOutput": 192
+        },
+        "dist/hashVars.js": {
+          "bytesInOutput": 298
+        },
+        "dist/saveableState.js": {
+          "bytesInOutput": 139
+        },
+        "dist/utils.js": {
+          "bytesInOutput": 80
         },
         "dist/App.js": {
-          "bytesInOutput": 5712
+          "bytesInOutput": 4973
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -437,7 +508,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 445336
+      "bytes": 443576
     },
     "../~~bundle~~/_snowpack/pkg/html-to-image.js": {
       "imports": [],
@@ -456,6 +527,18 @@
         }
       },
       "bytes": 14576
+    },
+    "../~~bundle~~/_snowpack/pkg/copy-to-clipboard.js": {
+      "imports": [],
+      "exports": [
+        "default"
+      ],
+      "inputs": {
+        "_snowpack/pkg/copy-to-clipboard.js": {
+          "bytesInOutput": 2139
+        }
+      },
+      "bytes": 2161
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
