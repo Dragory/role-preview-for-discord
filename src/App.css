@@ -34,6 +34,14 @@
   margin: 32px 0 16px;
 }
 
+.App > .preview .image-preview-wrapper {
+  margin: -8px;
+}
+
+.App > .preview .image-preview-padding {
+  padding: 8px;
+}
+
 .App > .config {
   grid-area: config;
 }

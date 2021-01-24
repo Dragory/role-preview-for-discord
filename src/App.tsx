@@ -126,6 +126,33 @@ export function App() {
     window.location.reload();
   }
 
+  const previewRef = useRef<HTMLDivElement | null>(null);
+  const [creatingImage, setCreatingImage] = useState(false);
+
+  async function downloadImage() {
+    if (!previewRef.current) {
+      return;
+    }
+
+    if (creatingImage) {
+      return;
+    }
+
+    setCreatingImage(true);
+
+    const htmlToImage = await import("html-to-image");
+    const dataUrl = await htmlToImage.toPng(previewRef.current, {
+      backgroundColor: "transparent",
+    });
+
+    const temp = document.createElement("a");
+    temp.download = `roles-${Date.now()}.png`;
+    temp.href = dataUrl;
+    temp.click();
+
+    setCreatingImage(false);
+  }
+
   return (
     <div className="App">
       <div className="title">
@@ -151,22 +178,29 @@ export function App() {
         <h2>Simulate color blindness</h2>
         <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
 
-        <h2>Reset</h2>
+        <h2>Tools</h2>
         <button className="reset" onClick={reset}>
-          Click here to reset
+          Reset all
+        </button>
+        <button className="download-image" onClick={downloadImage}>
+          Download as image
         </button>
       </div>
       <div className="preview">
-        <PreviewPane theme="dark" roles={roles} />
-        <PreviewPane theme="light" roles={roles} />
+        <div className="image-preview-wrapper">
+          <div className="image-preview-padding" ref={previewRef}>
+            <PreviewPane theme="dark" roles={roles} />
+            <PreviewPane theme="light" roles={roles} />
 
-        {Array.from(colorBlindModes).map((mode) => (
-          <div key={mode.name}>
-            <h2>{mode.name}</h2>
-            <PreviewPane theme="dark" roles={getColorBlindRoles(mode, roles)} />
-            <PreviewPane theme="light" roles={getColorBlindRoles(mode, roles)} />
+            {Array.from(colorBlindModes).map((mode) => (
+              <div key={mode.name}>
+                <h2>{mode.name}</h2>
+                <PreviewPane theme="dark" roles={getColorBlindRoles(mode, roles)} />
+                <PreviewPane theme="light" roles={getColorBlindRoles(mode, roles)} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
       <div className="info">
         <h2>Info</h2>
