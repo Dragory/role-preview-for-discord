@@ -11,19 +11,7 @@ import { htmlToImage } from "./htmlToImage";
 import { downloadImage } from "./downloadImage";
 import { copyLink } from "./copyLink";
 import { loadState, saveState } from "./saveableState";
-
-const useEffectAfterNCalls = (n: number, effect: any, deps: any[]) => {
-  const callN = useRef(0);
-
-  useEffect(() => {
-    callN.current++;
-    if (callN.current <= n) {
-      return;
-    }
-
-    effect();
-  }, deps);
-};
+import { useEffectIgnoreFirstCall } from "./utils";
 
 const defaultRoles: Role[] = [
   {
@@ -93,13 +81,9 @@ export function App() {
   }
 
   // Skip the initial call
-  useEffectAfterNCalls(
-    1,
-    () => {
-      saveState(getSaveableState());
-    },
-    [roles, colorBlindModes],
-  );
+  useEffectIgnoreFirstCall(() => {
+    saveState(getSaveableState());
+  }, [roles, colorBlindModes]);
 
   function reset() {
     window.location.hash = "#";
