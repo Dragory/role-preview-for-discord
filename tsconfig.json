@@ -20,6 +20,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
     "noImplicitThis": true
