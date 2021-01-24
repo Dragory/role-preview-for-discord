@@ -69,7 +69,7 @@
       ]
     },
     "dist/App.css": {
-      "bytes": 2424,
+      "bytes": 2443,
       "imports": []
     },
     "dist/PreviewPane.css": {
@@ -209,11 +209,45 @@
       ]
     },
     "dist/ColorBlindModes.css": {
-      "bytes": 45,
+      "bytes": 112,
       "imports": []
     },
+    "_snowpack/pkg/react-switch.js": {
+      "bytes": 7998,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/index-57a74e37.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "dist/Switch.css": {
+      "bytes": 36,
+      "imports": []
+    },
+    "dist/Switch.js": {
+      "bytes": 490,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/react.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react-switch.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/Switch.css",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "dist/ColorBlindModes.js": {
-      "bytes": 1613,
+      "bytes": 1619,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -225,6 +259,10 @@
         },
         {
           "path": "dist/ColorBlindModes.css",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/Switch.js",
           "kind": "import-statement"
         }
       ]
@@ -238,7 +276,7 @@
       "imports": []
     },
     "dist/App.js": {
-      "bytes": 10298,
+      "bytes": 10311,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -270,6 +308,10 @@
         },
         {
           "path": "_snowpack/pkg/copy-to-clipboard.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/Switch.js",
           "kind": "import-statement"
         },
         {
@@ -314,10 +356,10 @@
       "exports": [],
       "inputs": {
         "_snowpack/pkg/react-color.js": {
-          "bytesInOutput": 140328
+          "bytesInOutput": 140326
         },
         "_snowpack/pkg/react-beautiful-dnd.js": {
-          "bytesInOutput": 111308
+          "bytesInOutput": 111345
         },
         "_snowpack/pkg/html-to-image.js": {
           "bytesInOutput": 14792
@@ -329,13 +371,13 @@
           "bytesInOutput": 482
         },
         "_snowpack/pkg/common/index-57a74e37.js": {
-          "bytesInOutput": 6969
+          "bytesInOutput": 6964
         },
         "_snowpack/pkg/react.js": {
           "bytesInOutput": 62
         },
         "_snowpack/pkg/common/index-8dbeb7e4.js": {
-          "bytesInOutput": 124118
+          "bytesInOutput": 124105
         },
         "_snowpack/pkg/react-dom.js": {
           "bytesInOutput": 0
@@ -353,7 +395,7 @@
           "bytesInOutput": 707
         },
         "_snowpack/pkg/react-twemoji.js": {
-          "bytesInOutput": 25314
+          "bytesInOutput": 25300
         },
         "dist/PreviewPane.js": {
           "bytesInOutput": 1162
@@ -373,14 +415,23 @@
         "dist/ColorBlindModes.css": {
           "bytesInOutput": 0
         },
+        "_snowpack/pkg/react-switch.js": {
+          "bytesInOutput": 7634
+        },
+        "dist/Switch.css": {
+          "bytesInOutput": 0
+        },
+        "dist/Switch.js": {
+          "bytesInOutput": 180
+        },
         "dist/ColorBlindModes.js": {
-          "bytesInOutput": 842
+          "bytesInOutput": 803
         },
         "_snowpack/pkg/copy-to-clipboard.js": {
           "bytesInOutput": 2153
         },
         "dist/App.js": {
-          "bytesInOutput": 5738
+          "bytesInOutput": 5706
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -389,7 +440,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 452376
+      "bytes": 460122
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
@@ -398,19 +449,22 @@
           "bytesInOutput": 436
         },
         "dist/App.css": {
-          "bytesInOutput": 1865
+          "bytesInOutput": 1880
         },
         "dist/ColorBlindModes.css": {
-          "bytesInOutput": 37
+          "bytesInOutput": 95
         },
         "dist/PreviewPane.css": {
           "bytesInOutput": 1964
         },
         "dist/RoleConfigurator.css": {
           "bytesInOutput": 1174
+        },
+        "dist/Switch.css": {
+          "bytesInOutput": 28
         }
       },
-      "bytes": 5545
+      "bytes": 5646
     }
   }
 }
