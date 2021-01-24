@@ -361,9 +361,6 @@
         "_snowpack/pkg/react-beautiful-dnd.js": {
           "bytesInOutput": 111345
         },
-        "_snowpack/pkg/html-to-image.js": {
-          "bytesInOutput": 14792
-        },
         "_snowpack/env.js": {
           "bytesInOutput": 100
         },
@@ -431,7 +428,7 @@
           "bytesInOutput": 2153
         },
         "dist/App.js": {
-          "bytesInOutput": 5706
+          "bytesInOutput": 5712
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -440,7 +437,25 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 460122
+      "bytes": 445336
+    },
+    "../~~bundle~~/_snowpack/pkg/html-to-image.js": {
+      "imports": [],
+      "exports": [
+        "toBlob",
+        "toCanvas",
+        "toJpeg",
+        "toPixelData",
+        "toPng",
+        "toSvg",
+        "toSvgDataURL"
+      ],
+      "inputs": {
+        "_snowpack/pkg/html-to-image.js": {
+          "bytesInOutput": 14467
+        }
+      },
+      "bytes": 14576
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
