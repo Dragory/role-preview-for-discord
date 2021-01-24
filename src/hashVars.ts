@@ -20,5 +20,5 @@ function stringifyHashVars(obj: any) {
 
 export function setHashVars(obj: any) {
   const hashVars = stringifyHashVars(obj);
-  window.history.replaceState(null, "", stringifyHashVars(hashVars));
+  window.history.replaceState(null, "", hashVars);
 }
