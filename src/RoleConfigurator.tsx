@@ -1,7 +1,9 @@
 import React, { Dispatch, useCallback, useEffect, useState } from "react";
 import type { Role } from "./Role";
 import { SketchPicker } from "react-color";
+import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd";
 import "./RoleConfigurator.css";
+import Twemoji from "react-twemoji";
 
 interface RoleConfiguratorProps {
   roles: Role[];
@@ -45,6 +47,15 @@ function isChildOf(ref: HTMLElement, selector: string) {
   return false;
 }
 
+// From https://codesandbox.io/s/k260nyxq9v?file=/index.js:373-567
+const reorder = (list: any[], startIndex: number, endIndex: number) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
 export function RoleConfigurator(props: RoleConfiguratorProps) {
   function addRole() {
     const id = Math.max(0, ...props.roles.map((r) => r.id)) + 1;
@@ -67,6 +78,15 @@ export function RoleConfigurator(props: RoleConfiguratorProps) {
   function updateRoleName(role: Role, newName: string) {
     role.name = newName;
     props.setRoles([...props.roles]);
+  }
+
+  function updateRoleOrder(result: DropResult) {
+    if (!result.destination) {
+      return;
+    }
+
+    const reordered = reorder(props.roles, result.source.index, result.destination.index);
+    props.setRoles(reordered);
   }
 
   const [openedColorPicker, setOpenedColorPicker] = useState(0);
@@ -106,39 +126,55 @@ export function RoleConfigurator(props: RoleConfiguratorProps) {
 
   return (
     <div className="RoleConfigurator">
-      {props.roles.map((role) => (
-        <div key={role.id} className="role">
-          <div className="options">
-            <input
-              className="name-input"
-              type="text"
-              value={role.name}
-              onChange={(e) => updateRoleName(role, e.target.value)}
-            />
-            <div className="color-button-wrapper">
-              <button
-                className="color-button"
-                style={{ ["--role-color" as any]: role.color }}
-                onClick={() => toggleColorPicker(role)}
-              >
-                {role.color}
-              </button>
-              {openedColorPicker === role.id && (
-                <SketchPicker
-                  className="color-picker"
-                  disableAlpha={true}
-                  color={role.color}
-                  presetColors={discordDefaultColors}
-                  onChange={(color) => updateRoleColor(role, color.hex)}
-                />
-              )}
+      <DragDropContext onDragEnd={updateRoleOrder}>
+        <Droppable droppableId="roles-droppable">
+          {(provided) => (
+            <div {...provided.droppableProps} ref={provided.innerRef} className="roles-list">
+              {props.roles.map((role, index) => (
+                <Draggable key={role.id} draggableId={role.id.toString()} index={index}>
+                  {(provided) => (
+                    <div className="role" ref={provided.innerRef} {...provided.draggableProps}>
+                      <div className="options">
+                        <div {...provided.dragHandleProps} className="drag-handle">
+                          <div className="scuffed-drag-icon" title="Drag to reorder" />
+                        </div>
+                        <input
+                          className="name-input"
+                          type="text"
+                          value={role.name}
+                          onChange={(e) => updateRoleName(role, e.target.value)}
+                        />
+                        <div className="color-button-wrapper">
+                          <button
+                            className="color-button"
+                            style={{ ["--role-color" as any]: role.color }}
+                            onClick={() => toggleColorPicker(role)}
+                          >
+                            {role.color}
+                          </button>
+                          {openedColorPicker === role.id && (
+                            <SketchPicker
+                              className="color-picker"
+                              disableAlpha={true}
+                              color={role.color}
+                              presetColors={discordDefaultColors}
+                              onChange={(color) => updateRoleColor(role, color.hex)}
+                            />
+                          )}
+                        </div>
+                        <button className="delete-button" onClick={() => deleteRole(role.id)}>
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
             </div>
-            <button className="delete-button" onClick={() => deleteRole(role.id)}>
-              Delete
-            </button>
-          </div>
-        </div>
-      ))}
+          )}
+        </Droppable>
+      </DragDropContext>
       <button className="add-button" onClick={addRole}>
         Add role
       </button>

@@ -1,7 +1,11 @@
 .RoleConfigurator {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+
+.RoleConfigurator .roles-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .RoleConfigurator .role {
@@ -9,12 +13,29 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  margin-bottom: 8px;
 }
 
 .RoleConfigurator .options {
   display: flex;
   width: 100%;
   gap: 8px;
+}
+
+.RoleConfigurator .drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RoleConfigurator .drag-handle .scuffed-drag-icon {
+  width: 12px;
+  height: 16px;
+
+  background-image: radial-gradient(circle at center, black 0, black 1px, transparent 1px, transparent 100%);
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 4px 4px;
 }
 
 .RoleConfigurator .name-input {
