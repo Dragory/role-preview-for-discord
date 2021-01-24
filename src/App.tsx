@@ -10,37 +10,18 @@ import { Switch } from "./Switch";
 import { htmlToImage } from "./htmlToImage";
 import { downloadImage } from "./downloadImage";
 import { copyLink } from "./copyLink";
+import { getHashVars, setHashVars } from "./hashVars";
 
 interface SaveableState {
   roles: Role[];
   colorBlindModes: string[];
 }
 
-function getHashVars() {
-  return window.location.hash
-    .slice(2) // Remove #? at the beginning
-    .split("&")
-    .filter(Boolean)
-    .reduce((obj, hashVar) => {
-      const [prop, value] = hashVar.split("=");
-      obj[prop] = value;
-      return obj;
-    }, {} as any);
-}
-
-function stringifyHashVars(obj: any) {
-  const varStr = Object.entries(obj)
-    .map(([prop, value]) => `${prop}=${value}`)
-    .join("&");
-
-  return varStr ? `#?${varStr}` : "";
-}
-
 function saveState(state: SaveableState) {
   const encoded = btoa(JSON.stringify(state));
   const hashVars = getHashVars();
   hashVars.state = encoded;
-  window.history.replaceState(null, "", stringifyHashVars(hashVars));
+  setHashVars(hashVars);
 }
 
 function loadState(): SaveableState | null {
