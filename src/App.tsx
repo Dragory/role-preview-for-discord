@@ -77,6 +77,14 @@ export function App() {
   const [importExport, setImportExport] = useState<"import" | "export" | null>(null);
   const [stateToImport, setStateToImport] = useState("");
 
+  const [simulateColorBlindness, setSimulateColorBlindness] = useState(false);
+
+  useEffect(() => {
+    if (colorBlindModes.size > 0 && !simulateColorBlindness) {
+      setSimulateColorBlindness(true);
+    }
+  }, [colorBlindModes]);
+
   function getColorBlindRoles(mode: ColorBlindMode, roles: Role[]): Role[] {
     return roles.map((role) => {
       return {
@@ -197,13 +205,28 @@ export function App() {
           <h2>Roles</h2>
           <div className="mobile-scroll-hint">Scroll further below to see the preview!</div>
           <RoleConfigurator roles={roles} setRoles={setRoles} />
-
-          <h2>Simulate color blindness</h2>
-          <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
         </div>
 
         <div className="tools">
           <h2>Tools</h2>
+
+          <div className="tool">
+            <label>
+              <input
+                type="checkbox"
+                checked={simulateColorBlindness}
+                onChange={(ev) => setSimulateColorBlindness(ev.target.checked)}
+              />
+              Simulate color blindness
+            </label>
+
+            {simulateColorBlindness && (
+              <div className="color-blind-modes">
+                <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
+              </div>
+            )}
+          </div>
+
           <div className="tool-buttons">
             <button className="copy-link" onClick={copyLink}>
               {(copied && "Copied!") || "Copy link"}

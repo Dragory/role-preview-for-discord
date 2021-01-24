@@ -90,7 +90,15 @@
   margin-bottom: 16px;
 }
 
-.App > .main-wrapper > .tools > .tool-buttons {
+.App > .main-wrapper > .tools .tool {
+  margin-bottom: 16px;
+}
+
+.App > .main-wrapper > .tools .color-blind-modes {
+  padding-left: 8px;
+}
+
+.App > .main-wrapper > .tools .tool-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
