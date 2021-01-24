@@ -96,7 +96,10 @@
 .App > .main-wrapper > .tools .tool-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+}
+
+.App > .main-wrapper > .tools .tool-buttons button {
+  margin: 0 8px 8px 0; /* Simulate flex gap */
 }
 
 .App > .footer {

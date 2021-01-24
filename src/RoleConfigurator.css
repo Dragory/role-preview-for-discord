@@ -12,15 +12,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
   margin-bottom: 8px;
 }
 
 .RoleConfigurator .options {
   display: flex;
   width: 100%;
-  gap: 8px;
   align-items: center;
+}
+
+.RoleConfigurator .options > :not(:last-child) {
+  margin-right: 8px; /* Simulate flex gap */
 }
 
 .RoleConfigurator .drag-handle-wrapper {
