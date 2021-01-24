@@ -21,8 +21,10 @@ export function PreviewPane(props: PreviewPaneProps) {
       return `🙂 Good contrast (${formatted}:1)`;
     } else if (contrastRatio >= 3) {
       return `😐 Passable contrast (${formatted}:1)`;
+    } else if (contrastRatio >= 2) {
+      return `😨 Lacking contrast (${formatted}:1)`;
     } else {
-      return `🚫 Poor contrast (${formatted}:1)`;
+      return `🚫 Insufficient contrast (${formatted}:1)`;
     }
   }
 

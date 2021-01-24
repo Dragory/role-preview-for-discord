@@ -191,7 +191,8 @@ export function App() {
             "Passable" passes the <em>minimum</em> contrast level recommended by <em>ISO-9241-3</em> and{" "}
             <em>ANSI-HFES-100-1988</em> for standard text and vision.{" "}
           </span>
-          <span>"Poor" does not pass any contrast ratio requirements. </span>
+          <span>"Lacking" is below contrast recommendations, but still somewhat readable. </span>
+          <span>"Insufficient" can be hard to read even for those with better than average vision. </span>
         </p>
         <p>
           <span>Source for the prevalence numbers for the different types of color blindness: </span>
