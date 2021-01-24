@@ -199,17 +199,20 @@ export function App() {
         <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
 
         <h2>Tools</h2>
-        <button className="copy-link" onClick={copyLink}>
-          {(copied && "Copied!") || "Copy link"}
-        </button>
-        <button className="download-image" onClick={downloadImage}>
-          Download as image
-        </button>
-        <button className="reset" onClick={reset}>
-          Reset all
-        </button>
+        <div className="tools">
+          <button className="copy-link" onClick={copyLink}>
+            {(copied && "Copied!") || "Copy link"}
+          </button>
+          <button className="download-image" onClick={downloadImage}>
+            Download as image
+          </button>
+          <button className="reset" onClick={reset}>
+            Reset all
+          </button>
+        </div>
       </div>
       <div className="preview">
+        <h2>Preview</h2>
         <div className="image-preview-wrapper">
           <div className="image-preview-padding" ref={previewRef}>
             <PreviewPane theme="dark" roles={roles} />

@@ -4,7 +4,7 @@
   margin: 0 auto;
 
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 24px;
 
   /*  Mobile layout */
   grid-template-areas:
@@ -24,6 +24,10 @@
   margin: 0.3em 0 0.2em;
 }
 
+.App > .title p {
+  margin: 16px 0 0;
+}
+
 .App > .preview {
   grid-area: preview;
 }
@@ -32,6 +36,10 @@
   font-weight: 400;
   font-size: 28px;
   margin: 32px 0 16px;
+}
+
+.App > .preview > h2:first-child {
+  margin-top: 0;
 }
 
 .App > .preview .image-preview-wrapper {
@@ -50,7 +58,7 @@
   margin-top: 24px;
   font-weight: 400;
   font-size: 28px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .App > .config h2:first-child {
@@ -60,6 +68,12 @@
 .App > .config .mobile-scroll-hint {
   margin-top: -6px;
   margin-bottom: 10px;
+}
+
+.App > .config .tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .App > .info {
