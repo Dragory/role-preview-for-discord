@@ -69,7 +69,7 @@
       ]
     },
     "dist/App.css": {
-      "bytes": 2443,
+      "bytes": 2486,
       "imports": []
     },
     "dist/PreviewPane.css": {
@@ -449,7 +449,7 @@
           "bytesInOutput": 436
         },
         "dist/App.css": {
-          "bytesInOutput": 1880
+          "bytesInOutput": 1914
         },
         "dist/ColorBlindModes.css": {
           "bytesInOutput": 95
@@ -464,7 +464,7 @@
           "bytesInOutput": 28
         }
       },
-      "bytes": 5645
+      "bytes": 5679
     }
   }
 }
