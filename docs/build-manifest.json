@@ -229,12 +229,16 @@
         }
       ]
     },
+    "_snowpack/pkg/copy-to-clipboard.js": {
+      "bytes": 4035,
+      "imports": []
+    },
     "_snowpack/pkg/html-to-image.js": {
       "bytes": 36170,
       "imports": []
     },
     "dist/App.js": {
-      "bytes": 8895,
+      "bytes": 9473,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -262,6 +266,10 @@
         },
         {
           "path": "_snowpack/pkg/react-twemoji.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/copy-to-clipboard.js",
           "kind": "import-statement"
         },
         {
@@ -309,7 +317,7 @@
           "bytesInOutput": 140328
         },
         "_snowpack/pkg/react-beautiful-dnd.js": {
-          "bytesInOutput": 111308
+          "bytesInOutput": 111306
         },
         "_snowpack/pkg/html-to-image.js": {
           "bytesInOutput": 14792
@@ -368,8 +376,11 @@
         "dist/ColorBlindModes.js": {
           "bytesInOutput": 842
         },
+        "_snowpack/pkg/copy-to-clipboard.js": {
+          "bytesInOutput": 2153
+        },
         "dist/App.js": {
-          "bytesInOutput": 5160
+          "bytesInOutput": 5424
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -378,7 +389,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 449588
+      "bytes": 452003
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
