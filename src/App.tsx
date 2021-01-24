@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, ComponentProps } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { PreviewPane } from "./PreviewPane";
 import type { Role } from "./Role";
@@ -10,7 +10,6 @@ import { Switch } from "./Switch";
 import { htmlToImage } from "./htmlToImage";
 import { downloadImage } from "./downloadImage";
 import { copyLink } from "./copyLink";
-import { getHashVars, setHashVars } from "./hashVars";
 import { loadState, saveState } from "./saveableState";
 
 const useEffectAfterNCalls = (n: number, effect: any, deps: any[]) => {

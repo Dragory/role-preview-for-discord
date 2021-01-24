@@ -3,7 +3,6 @@ import type { Role } from "./Role";
 import { SketchPicker } from "react-color";
 import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd";
 import "./RoleConfigurator.css";
-import Twemoji from "react-twemoji";
 
 interface RoleConfiguratorProps {
   roles: Role[];
