@@ -101,8 +101,8 @@ export function App() {
     loadAndApplyState();
 
     const ref = loadAndApplyState;
-    window.addEventListener("onHashChange", ref);
-    return () => window.removeEventListener("onHashChange", ref);
+    window.addEventListener("hashchange", ref);
+    return () => window.removeEventListener("hashchange", ref);
   }, []);
 
   function getSaveableState() {
