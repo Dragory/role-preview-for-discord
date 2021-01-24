@@ -69,7 +69,7 @@
       ]
     },
     "dist/App.css": {
-      "bytes": 1478,
+      "bytes": 1650,
       "imports": []
     },
     "dist/PreviewPane.css": {
@@ -238,7 +238,7 @@
       "imports": []
     },
     "dist/App.js": {
-      "bytes": 9516,
+      "bytes": 9650,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -380,7 +380,7 @@
           "bytesInOutput": 2153
         },
         "dist/App.js": {
-          "bytesInOutput": 5458
+          "bytesInOutput": 5538
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -389,7 +389,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 452037
+      "bytes": 452117
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
@@ -398,7 +398,7 @@
           "bytesInOutput": 449
         },
         "dist/App.css": {
-          "bytesInOutput": 1104
+          "bytesInOutput": 1233
         },
         "dist/ColorBlindModes.css": {
           "bytesInOutput": 37
@@ -410,7 +410,7 @@
           "bytesInOutput": 1046
         }
       },
-      "bytes": 4669
+      "bytes": 4798
     }
   }
 }
