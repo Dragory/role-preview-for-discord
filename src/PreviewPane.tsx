@@ -1,7 +1,7 @@
 import React from "react";
 import type { Role } from "./Role";
 import "./PreviewPane.css";
-import { getContrastRatio } from "./utils";
+import { getContrastRatio } from "./colorUtils";
 import Twemoji from "react-twemoji";
 
 interface PreviewPaneProps {
