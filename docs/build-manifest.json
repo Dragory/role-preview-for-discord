@@ -166,7 +166,7 @@
       ]
     },
     "dist/RoleConfigurator.css": {
-      "bytes": 1427,
+      "bytes": 1426,
       "imports": []
     },
     "dist/RoleConfigurator.js": {
@@ -458,13 +458,13 @@
           "bytesInOutput": 1964
         },
         "dist/RoleConfigurator.css": {
-          "bytesInOutput": 1174
+          "bytesInOutput": 1173
         },
         "dist/Switch.css": {
           "bytesInOutput": 28
         }
       },
-      "bytes": 5646
+      "bytes": 5645
     }
   }
 }
