@@ -135,15 +135,11 @@ export function RoleConfigurator(props: RoleConfiguratorProps) {
                   {(provided) => (
                     <div className="role" ref={provided.innerRef} {...provided.draggableProps}>
                       <div className="options">
-                        <div {...provided.dragHandleProps} className="drag-handle">
-                          <div className="scuffed-drag-icon" title="Drag to reorder" />
+                        <div className="drag-handle-wrapper">
+                          <div {...provided.dragHandleProps} className="drag-handle">
+                            <div className="scuffed-drag-icon" title="Drag to reorder" />
+                          </div>
                         </div>
-                        <input
-                          className="name-input"
-                          type="text"
-                          value={role.name}
-                          onChange={(e) => updateRoleName(role, e.target.value)}
-                        />
                         <div className="color-button-wrapper">
                           <button
                             className="color-button"
@@ -162,6 +158,12 @@ export function RoleConfigurator(props: RoleConfiguratorProps) {
                             />
                           )}
                         </div>
+                        <input
+                          className="name-input"
+                          type="text"
+                          value={role.name}
+                          onChange={(e) => updateRoleName(role, e.target.value)}
+                        />
                         <button className="delete-button" onClick={() => deleteRole(role.id)}>
                           Delete
                         </button>

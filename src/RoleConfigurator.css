@@ -20,16 +20,22 @@
   display: flex;
   width: 100%;
   gap: 8px;
+  align-items: center;
 }
 
-.RoleConfigurator .drag-handle {
+.RoleConfigurator .drag-handle-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.RoleConfigurator .drag-handle {
+  margin: -8px;
+  padding: 8px;
+}
+
 .RoleConfigurator .drag-handle .scuffed-drag-icon {
-  width: 12px;
+  width: 16px;
   height: 16px;
 
   background-image: radial-gradient(circle at center, black 0, black 1px, transparent 1px, transparent 100%);
@@ -52,7 +58,7 @@
   border: 1px solid #444;
   border-radius: 3px;
 
-  width: 20px;
+  width: 30px;
   height: 20px;
 
   white-space: nowrap;
