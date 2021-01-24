@@ -160,12 +160,11 @@ export function App() {
     if (navigator.share) {
       try {
         await navigator.share({
+          title: "Role Preview for Discord",
           url: linkToCopy,
         });
-        return;
-      } catch (e) {
-        console.log("navigator.share error", e);
-      }
+      } catch (e) {}
+      return;
     }
 
     copy(linkToCopy);
