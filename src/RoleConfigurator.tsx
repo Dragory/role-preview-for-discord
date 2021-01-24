@@ -112,7 +112,7 @@ export function RoleConfigurator(props: RoleConfiguratorProps) {
             <input
               className="name-input"
               type="text"
-              defaultValue={role.name}
+              value={role.name}
               onChange={(e) => updateRoleName(role, e.target.value)}
             />
             <div className="color-button-wrapper">
