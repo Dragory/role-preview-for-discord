@@ -1,7 +1,16 @@
 .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App > .main-wrapper {
+  flex: 1 1 100%;
+
   width: 100%;
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
+  padding: 20px 20px 40px;
 
   display: grid;
   grid-gap: 24px;
@@ -11,86 +20,101 @@
     "title"
     "config"
     "preview"
-    "info";
+    "tools";
 }
 
-.App > .title {
+.App > .main-wrapper > .title {
   grid-area: title;
 }
 
-.App > .title h1 {
+.App > .main-wrapper > .title h1 {
   font-weight: 400;
   font-size: 32px;
   margin: 0.3em 0 0.2em;
 }
 
-.App > .title p {
+.App > .main-wrapper > .title p {
   margin: 16px 0 0;
 }
 
-.App > .preview {
+.App > .main-wrapper > .preview {
   grid-area: preview;
 }
 
-.App > .preview h2 {
+.App > .main-wrapper > .preview h2 {
   font-weight: 400;
   font-size: 28px;
   margin: 32px 0 16px;
 }
 
-.App > .preview > h2:first-child {
+.App > .main-wrapper > .preview > h2:first-child {
   margin-top: 0;
 }
 
-.App > .preview .image-preview-wrapper {
+.App > .main-wrapper > .preview .image-preview-wrapper {
   margin: -8px;
 }
 
-.App > .preview .image-preview-padding {
+.App > .main-wrapper > .preview .image-preview-padding {
   padding: 8px;
 }
 
-.App > .config {
+.App > .main-wrapper > .config {
   grid-area: config;
 }
 
-.App > .config h2 {
+.App > .main-wrapper > .config h2 {
   margin-top: 24px;
   font-weight: 400;
   font-size: 28px;
   margin-bottom: 16px;
 }
 
-.App > .config h2:first-child {
+.App > .main-wrapper > .config h2:first-child {
   margin-top: 0;
 }
 
-.App > .config .mobile-scroll-hint {
+.App > .main-wrapper > .config .mobile-scroll-hint {
   margin-top: -6px;
   margin-bottom: 10px;
 }
 
-.App > .config .tools {
+.App > .main-wrapper > .tools {
+  grid-area: tools;
+}
+
+.App > .main-wrapper > .tools h2 {
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.App > .main-wrapper > .tools > .tool-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.App > .info {
-  grid-area: info;
+.App > .footer {
+  flex: 0 0 auto;
+  background-color: #ddd;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 0px, transparent 40px);
+  border-top: 1px solid #ccc;
 }
 
-.App > .info h2 {
-  font-weight: 400;
-  font-size: 28px;
-  margin-bottom: 8px;
+.App > .footer > .footer-content {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 30px 20px 10px;
 }
 
-.App > .info .allow-break {
-  word-break: break-all;
+.App > .footer p {
+  margin: 0 0 16px;
 }
 
-.App > .info .twemoji-info .emoji {
+.App > .footer .twemoji-info .emoji {
   width: 16px;
   height: 16px;
   vertical-align: middle;
@@ -101,17 +125,17 @@
 }
 
 @media (min-width: 1000px) {
-  .App {
+  .App > .main-wrapper {
     /*  Desktop layout */
     grid-template-areas:
       "title title"
       "preview config"
-      "preview info";
+      "preview tools";
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto minmax(1px, min-content) auto;
+    grid-template-rows: min-content min-content 1fr;
   }
 
-  .App > .config .mobile-scroll-hint {
+  .App > .main-wrapper > .config .mobile-scroll-hint {
     display: none;
   }
 }

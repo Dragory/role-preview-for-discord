@@ -15,7 +15,6 @@ body {
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 20px;
   background-color: #eee;
   color: #2e3338;
   overflow-y: scroll; /* Prevent page from jumping when toggling color blindness modes */

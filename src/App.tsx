@@ -179,103 +179,108 @@ export function App() {
 
   return (
     <div className="App">
-      <div className="title">
-        <h1>Role Preview for Discord</h1>
-        <p>
-          Preview role colors and check for possible issues with contrast and color schemes!
-          <br />
-          📋 Copy the website address to share your changes!
-        </p>
-        <p>
-          <strong>Note:</strong> It's normal to only reach "Passable contrast" when optimizing for both dark and light
-          theme.
-          <br />
-          See "Info" below for more details on contrast.
-        </p>
-      </div>
-
-      <div className="config">
-        <h2>Roles</h2>
-        <div className="mobile-scroll-hint">Scroll further below to see the preview!</div>
-        <RoleConfigurator roles={roles} setRoles={setRoles} />
-
-        <h2>Simulate color blindness</h2>
-        <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
-
-        <h2>Tools</h2>
-        <div className="tools">
-          <button className="copy-link" onClick={copyLink}>
-            {(copied && "Copied!") || "Copy link"}
-          </button>
-          <button className="download-image" onClick={downloadImage}>
-            Download as image
-          </button>
-          <button className="reset" onClick={reset}>
-            Reset all
-          </button>
+      <div className="main-wrapper">
+        <div className="title">
+          <h1>Role Preview for Discord</h1>
+          <p>
+            Preview role colors and check for possible issues with contrast and color schemes!
+            <br />
+            📋 Copy the website address to share your changes!
+          </p>
+          <p>
+            <strong>Note:</strong> It's normal to only reach "Passable contrast" when optimizing for both dark and light
+            theme.
+          </p>
         </div>
-      </div>
-      <div className="preview">
-        <h2>Preview</h2>
-        <div className="image-preview-wrapper">
-          <div className="image-preview-padding" ref={previewRef}>
-            <PreviewPane theme="dark" roles={roles} />
-            <PreviewPane theme="light" roles={roles} />
 
-            {Array.from(colorBlindModes).map((mode) => (
-              <div key={mode.name}>
-                <h2>{mode.name}</h2>
-                <PreviewPane theme="dark" roles={getColorBlindRoles(mode, roles)} />
-                <PreviewPane theme="light" roles={getColorBlindRoles(mode, roles)} />
-              </div>
-            ))}
+        <div className="config">
+          <h2>Roles</h2>
+          <div className="mobile-scroll-hint">Scroll further below to see the preview!</div>
+          <RoleConfigurator roles={roles} setRoles={setRoles} />
+
+          <h2>Simulate color blindness</h2>
+          <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
+        </div>
+
+        <div className="tools">
+          <h2>Tools</h2>
+          <div className="tool-buttons">
+            <button className="copy-link" onClick={copyLink}>
+              {(copied && "Copied!") || "Copy link"}
+            </button>
+            <button className="download-image" onClick={downloadImage}>
+              Download as image
+            </button>
+            <button className="reset" onClick={reset}>
+              Reset all
+            </button>
+          </div>
+        </div>
+
+        <div className="preview">
+          <h2>Preview</h2>
+          <div className="image-preview-wrapper">
+            <div className="image-preview-padding" ref={previewRef}>
+              <PreviewPane theme="dark" roles={roles} />
+              <PreviewPane theme="light" roles={roles} />
+
+              {Array.from(colorBlindModes).map((mode) => (
+                <div key={mode.name}>
+                  <h2>{mode.name}</h2>
+                  <PreviewPane theme="dark" roles={getColorBlindRoles(mode, roles)} />
+                  <PreviewPane theme="light" roles={getColorBlindRoles(mode, roles)} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <div className="info">
-        <h2>Info</h2>
-        <p>
-          This tool is created and maintained by <a href="https://github.com/Dragory">Dragory</a>
-        </p>
-        <p>
-          <a href="https://github.com/Dragory/role-preview-for-discord">The source code is available on GitHub</a>
-        </p>
-        <p>
-          <span>
-            Contrast ratio calculations are based on the{" "}
-            <a href="https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio">WCAG&nbsp;2.0</a> standard.{" "}
-          </span>
-          <span>
-            <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">
-              For an explanation of WCAG&nbsp;2.0 contrast requirements, see this link.
-            </a>{" "}
-          </span>
-          <span>"Good" and "Great" contrast ratios pass level AA contrast requirements. </span>
-          <span>
-            "Passable" passes the <em>minimum</em> contrast level recommended by <em>ISO-9241-3</em> and{" "}
-            <em>ANSI-HFES-100-1988</em> for standard text and vision.{" "}
-          </span>
-          <span>"Lacking" is below contrast recommendations, but still somewhat readable. </span>
-          <span>"Insufficient" can be hard to read even for those with better than average vision. </span>
-        </p>
-        <p>
-          <span>Source for the prevalence numbers for the different types of color blindness: </span>
-          <br />
-          <a className="allow-break" href="https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/">
-            https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/
-          </a>
-        </p>
-        <p className="twemoji-info">
-          <span>
-            <a href="https://twemoji.twitter.com/">Twemoji</a> are used under the{" "}
-            <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.{" "}
-          </span>
-          <Twemoji options={{ folder: "svg", ext: ".svg" }} noWrapper={true}>
+
+      <div className="footer">
+        <div className="footer-content">
+          <p>
+            This tool is created and maintained by <a href="https://github.com/Dragory">Dragory</a>
+          </p>
+          <p>
+            <a href="https://github.com/Dragory/role-preview-for-discord">The source code is available on GitHub</a>
+          </p>
+          <p>
             <span>
-              The website icon is a resized version of the <span className="nowrap">🛠 icon.</span>{" "}
+              Contrast ratio calculations are based on the{" "}
+              <a href="https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio">WCAG&nbsp;2.0</a> standard.{" "}
             </span>
-          </Twemoji>
-        </p>
+            <span>
+              <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">
+                For an explanation of WCAG&nbsp;2.0 contrast requirements, see this link.
+              </a>{" "}
+            </span>
+            <span>"Good" and "Great" contrast ratios pass level AA contrast requirements. </span>
+            <span>
+              "Passable" passes the <em>minimum</em> contrast level recommended by <em>ISO-9241-3</em> and{" "}
+              <em>ANSI-HFES-100-1988</em> for standard text and vision.{" "}
+            </span>
+            <span>"Lacking" is below contrast recommendations, but still somewhat readable. </span>
+            <span>"Insufficient" can be hard to read even for those with better than average vision. </span>
+          </p>
+          <p>
+            <span>Source for the prevalence numbers for the different types of color blindness: </span>
+            <br />
+            <a className="allow-break" href="https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/">
+              https://www.ncbi.nlm.nih.gov/books/NBK11538/table/ch28kallcolor.T1/
+            </a>
+          </p>
+          <p className="twemoji-info">
+            <span>
+              <a href="https://twemoji.twitter.com/">Twemoji</a> are used under the{" "}
+              <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 license</a>.{" "}
+            </span>
+            <Twemoji options={{ folder: "svg", ext: ".svg" }} noWrapper={true}>
+              <span>
+                The website icon is a resized version of the <span className="nowrap">🛠 icon.</span>{" "}
+              </span>
+            </Twemoji>
+          </p>
+        </div>
       </div>
     </div>
   );
