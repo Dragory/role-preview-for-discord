@@ -11,23 +11,7 @@ import { htmlToImage } from "./htmlToImage";
 import { downloadImage } from "./downloadImage";
 import { copyLink } from "./copyLink";
 import { getHashVars, setHashVars } from "./hashVars";
-
-interface SaveableState {
-  roles: Role[];
-  colorBlindModes: string[];
-}
-
-function saveState(state: SaveableState) {
-  const encoded = btoa(JSON.stringify(state));
-  const hashVars = getHashVars();
-  hashVars.state = encoded;
-  setHashVars(hashVars);
-}
-
-function loadState(): SaveableState | null {
-  const hashVars = getHashVars();
-  return hashVars.state ? JSON.parse(atob(hashVars.state)) : null;
-}
+import { loadState, saveState } from "./saveableState";
 
 const useEffectAfterNCalls = (n: number, effect: any, deps: any[]) => {
   const callN = useRef(0);
