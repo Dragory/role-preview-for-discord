@@ -1,3 +1,7 @@
 .ColorBlindModes label {
   display: block;
 }
+
+.ColorBlindModes .mode:not(:last-child) {
+  margin-bottom: 2px;
+}

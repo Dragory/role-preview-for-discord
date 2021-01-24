@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ComponentProps } from "react";
 import "./App.css";
 import { PreviewPane } from "./PreviewPane";
 import type { Role } from "./Role";
@@ -7,6 +7,7 @@ import { ColorBlindModes } from "./ColorBlindModes";
 import { ColorBlindMode, colorBlindModes as allColorBlindModes } from "./colorBlind";
 import Twemoji from "react-twemoji";
 import copy from "copy-to-clipboard";
+import { Switch } from "./Switch";
 
 interface SaveableState {
   roles: Role[];
@@ -211,11 +212,7 @@ export function App() {
 
           <div className="tool">
             <label>
-              <input
-                type="checkbox"
-                checked={simulateColorBlindness}
-                onChange={(ev) => setSimulateColorBlindness(ev.target.checked)}
-              />
+              <Switch checked={simulateColorBlindness} onChange={(checked) => setSimulateColorBlindness(checked)} />{" "}
               Simulate color blindness
             </label>
 

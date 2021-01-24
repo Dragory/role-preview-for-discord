@@ -2,6 +2,7 @@ import React, { Dispatch } from "react";
 import type { ColorBlindMode } from "./colorBlind";
 import { colorBlindModes } from "./colorBlind";
 import "./ColorBlindModes.css";
+import { Switch } from "./Switch";
 
 interface ColorBlindModesProps {
   modes: Set<ColorBlindMode>;
@@ -31,11 +32,7 @@ export function ColorBlindModes(props: ColorBlindModesProps) {
     <div className="ColorBlindModes">
       {sortedModes.map((mode) => (
         <label className="mode" key={mode.name}>
-          <input
-            type="checkbox"
-            defaultChecked={props.modes.has(mode)}
-            onChange={(ev) => setModeStatus(mode, ev.target.checked)}
-          />
+          <Switch checked={props.modes.has(mode)} onChange={(checked) => setModeStatus(mode, checked)} />{" "}
           <span>{mode.name} </span>
           {mode.prevalenceMen && mode.prevalenceWomen && (
             <span>
