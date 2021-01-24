@@ -128,7 +128,7 @@
       "imports": []
     },
     "dist/RoleConfigurator.js": {
-      "bytes": 3282,
+      "bytes": 3275,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -288,7 +288,7 @@
           "bytesInOutput": 1097
         },
         "dist/RoleConfigurator.js": {
-          "bytesInOutput": 1655
+          "bytesInOutput": 1648
         },
         "dist/RoleConfigurator.css": {
           "bytesInOutput": 0
@@ -315,7 +315,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 321776
+      "bytes": 321769
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
