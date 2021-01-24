@@ -6,8 +6,10 @@ import { RoleConfigurator } from "./RoleConfigurator";
 import { ColorBlindModes } from "./ColorBlindModes";
 import { ColorBlindMode, colorBlindModes as allColorBlindModes } from "./colorBlind";
 import Twemoji from "react-twemoji";
-import copy from "copy-to-clipboard";
 import { Switch } from "./Switch";
+import { htmlToImage } from "./htmlToImage";
+import { downloadImage } from "./downloadImage";
+import { copyLink } from "./copyLink";
 
 interface SaveableState {
   roles: Role[];
@@ -143,44 +145,23 @@ export function App() {
   const previewRef = useRef<HTMLDivElement | null>(null);
   const [creatingImage, setCreatingImage] = useState(false);
 
-  async function downloadImage() {
-    if (!previewRef.current) {
-      return;
-    }
-
-    if (creatingImage) {
+  async function generateAndDownloadImage() {
+    if (!previewRef.current || creatingImage) {
       return;
     }
 
     setCreatingImage(true);
 
-    const htmlToImage = await import("html-to-image");
-    const dataUrl = await htmlToImage.toPng(previewRef.current, {
-      backgroundColor: "transparent",
-    });
-
-    const temp = document.createElement("a");
-    temp.download = `roles-${Date.now()}.png`;
-    temp.href = dataUrl;
-    temp.click();
+    const dataUrl = await htmlToImage(previewRef.current);
+    await downloadImage(dataUrl);
 
     setCreatingImage(false);
   }
 
   const [copied, setCopied] = useState(false);
-  async function copyLink() {
+  async function copyCurrentUrl() {
     const linkToCopy = window.location.toString();
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Role Preview for Discord",
-          url: linkToCopy,
-        });
-      } catch (e) {}
-      return;
-    }
-
-    copy(linkToCopy);
+    await copyLink(linkToCopy);
 
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
@@ -224,10 +205,10 @@ export function App() {
           </div>
 
           <div className="tool-buttons">
-            <button className="copy-link" onClick={copyLink}>
+            <button className="copy-link" onClick={copyCurrentUrl}>
               {(copied && "Copied!") || "Copy link"}
             </button>
-            <button className="download-image" onClick={downloadImage}>
+            <button className="download-image" onClick={generateAndDownloadImage}>
               Download as image
             </button>
             <button className="reset" onClick={reset}>
