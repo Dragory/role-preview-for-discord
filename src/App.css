@@ -131,6 +131,10 @@
   white-space: nowrap;
 }
 
+.allow-break {
+  word-break: break-all;
+}
+
 @media (min-width: 1000px) {
   .App > .main-wrapper {
     /*  Desktop layout */
