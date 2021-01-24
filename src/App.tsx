@@ -6,6 +6,7 @@ import { RoleConfigurator } from "./RoleConfigurator";
 import { ColorBlindModes } from "./ColorBlindModes";
 import { ColorBlindMode, colorBlindModes as allColorBlindModes } from "./colorBlind";
 import Twemoji from "react-twemoji";
+import copy from "copy-to-clipboard";
 
 interface SaveableState {
   roles: Role[];
@@ -153,6 +154,24 @@ export function App() {
     setCreatingImage(false);
   }
 
+  const [copied, setCopied] = useState(false);
+  async function copyLink() {
+    const linkToCopy = window.location.toString();
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          url: linkToCopy,
+        });
+        return;
+      } catch (e) {}
+    }
+
+    copy(linkToCopy);
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  }
+
   return (
     <div className="App">
       <div className="title">
@@ -179,11 +198,14 @@ export function App() {
         <ColorBlindModes modes={colorBlindModes} setModes={setColorBlindModes} />
 
         <h2>Tools</h2>
-        <button className="reset" onClick={reset}>
-          Reset all
+        <button className="copy-link" onClick={copyLink}>
+          {(copied && "Copied!") || "Copy link"}
         </button>
         <button className="download-image" onClick={downloadImage}>
           Download as image
+        </button>
+        <button className="reset" onClick={reset}>
+          Reset all
         </button>
       </div>
       <div className="preview">
