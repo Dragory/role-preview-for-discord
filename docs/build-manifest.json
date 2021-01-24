@@ -107,7 +107,7 @@
       ]
     },
     "dist/PreviewPane.js": {
-      "bytes": 2276,
+      "bytes": 2278,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -348,7 +348,7 @@
           "bytesInOutput": 25314
         },
         "dist/PreviewPane.js": {
-          "bytesInOutput": 1148
+          "bytesInOutput": 1162
         },
         "dist/RoleConfigurator.js": {
           "bytesInOutput": 2318
@@ -378,7 +378,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 449574
+      "bytes": 449588
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
