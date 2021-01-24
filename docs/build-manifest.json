@@ -69,7 +69,7 @@
       ]
     },
     "dist/App.css": {
-      "bytes": 1650,
+      "bytes": 2424,
       "imports": []
     },
     "dist/PreviewPane.css": {
@@ -166,11 +166,11 @@
       ]
     },
     "dist/RoleConfigurator.css": {
-      "bytes": 1255,
+      "bytes": 1427,
       "imports": []
     },
     "dist/RoleConfigurator.js": {
-      "bytes": 4551,
+      "bytes": 4639,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -238,7 +238,7 @@
       "imports": []
     },
     "dist/App.js": {
-      "bytes": 9739,
+      "bytes": 10298,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -279,7 +279,7 @@
       ]
     },
     "dist/index.css": {
-      "bytes": 680,
+      "bytes": 663,
       "imports": []
     },
     "dist/index.js": {
@@ -317,7 +317,7 @@
           "bytesInOutput": 140328
         },
         "_snowpack/pkg/react-beautiful-dnd.js": {
-          "bytesInOutput": 111306
+          "bytesInOutput": 111308
         },
         "_snowpack/pkg/html-to-image.js": {
           "bytesInOutput": 14792
@@ -359,7 +359,7 @@
           "bytesInOutput": 1162
         },
         "dist/RoleConfigurator.js": {
-          "bytesInOutput": 2318
+          "bytesInOutput": 2375
         },
         "dist/RoleConfigurator.css": {
           "bytesInOutput": 0
@@ -380,7 +380,7 @@
           "bytesInOutput": 2153
         },
         "dist/App.js": {
-          "bytesInOutput": 5558
+          "bytesInOutput": 5738
         },
         "dist/index.css": {
           "bytesInOutput": 0
@@ -389,16 +389,16 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 452137
+      "bytes": 452376
     },
     "../~~bundle~~/dist/index.css": {
       "imports": [],
       "inputs": {
         "dist/index.css": {
-          "bytesInOutput": 449
+          "bytesInOutput": 436
         },
         "dist/App.css": {
-          "bytesInOutput": 1233
+          "bytesInOutput": 1865
         },
         "dist/ColorBlindModes.css": {
           "bytesInOutput": 37
@@ -407,10 +407,10 @@
           "bytesInOutput": 1964
         },
         "dist/RoleConfigurator.css": {
-          "bytesInOutput": 1046
+          "bytesInOutput": 1174
         }
       },
-      "bytes": 4798
+      "bytes": 5545
     }
   }
 }
