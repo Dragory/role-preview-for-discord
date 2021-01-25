@@ -3,7 +3,7 @@ import type { Role } from "./Role";
 import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd";
 import "./RoleConfigurator.css";
 
-const SketchPicker = React.lazy(() => import("react-color").then((m) => ({ default: m.SketchPicker })));
+const SketchPicker = React.lazy(() => import("./SketchPicker"));
 
 interface RoleConfiguratorProps {
   roles: Role[];
