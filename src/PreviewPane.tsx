@@ -14,14 +14,15 @@ export function PreviewPane(props: PreviewPaneProps) {
     const bgColor = props.theme === "dark" ? "#36393f" : "#ffffff";
     const contrastRatio = getContrastRatio(color, bgColor);
     const formatted = contrastRatio.toFixed(2);
+    const comparisonValue = parseFloat(formatted);
 
-    if (formatted >= "7.00") {
+    if (comparisonValue >= 7.0) {
       return `😄 Great contrast (${formatted}:1)`;
-    } else if (formatted >= "4.50") {
+    } else if (comparisonValue >= 4.5) {
       return `🙂 Good contrast (${formatted}:1)`;
-    } else if (formatted >= "3.00") {
+    } else if (comparisonValue >= 3.0) {
       return `😐 Passable contrast (${formatted}:1)`;
-    } else if (formatted >= "2.00") {
+    } else if (comparisonValue >= 2.0) {
       return `😨 Lacking contrast (${formatted}:1)`;
     } else {
       return `🚫 Insufficient contrast (${formatted}:1)`;
