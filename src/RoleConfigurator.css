@@ -77,3 +77,12 @@
   margin-top: 8px;
   z-index: 10;
 }
+
+.RoleConfigurator .color-picker.placeholder {
+  /* Mirror SketchPicker styles */
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px, rgba(0, 0, 0, 0.15) 0 8px 16px;
+  padding: 10px;
+  font-size: 13px;
+}

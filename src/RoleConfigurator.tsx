@@ -1,8 +1,9 @@
-import React, { Dispatch, useCallback, useEffect, useState } from "react";
+import React, { Dispatch, Suspense, useCallback, useEffect, useState } from "react";
 import type { Role } from "./Role";
-import { SketchPicker } from "react-color";
 import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd";
 import "./RoleConfigurator.css";
+
+const SketchPicker = React.lazy(() => import("react-color").then((m) => ({ default: m.SketchPicker })));
 
 interface RoleConfiguratorProps {
   roles: Role[];
@@ -148,13 +149,15 @@ export function RoleConfigurator(props: RoleConfiguratorProps) {
                             {role.color}
                           </button>
                           {openedColorPicker === role.id && (
-                            <SketchPicker
-                              className="color-picker"
-                              disableAlpha={true}
-                              color={role.color}
-                              presetColors={discordDefaultColors}
-                              onChange={(color) => updateRoleColor(role, color.hex)}
-                            />
+                            <Suspense fallback={<div className="color-picker placeholder">Loading...</div>}>
+                              <SketchPicker
+                                className="color-picker"
+                                disableAlpha={true}
+                                color={role.color}
+                                presetColors={discordDefaultColors}
+                                onChange={(color) => updateRoleColor(role, color.hex)}
+                              />
+                            </Suspense>
                           )}
                         </div>
                         <input
