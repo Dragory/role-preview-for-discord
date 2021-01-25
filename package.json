@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "snowpack dev",
     "build": "snowpack build",
+    "build-gh-pages": "BASE_URL=/role-preview-for-discord snowpack build",
     "clear-cache": "snowpack --reload",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",

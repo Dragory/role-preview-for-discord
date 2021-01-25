@@ -24,6 +24,6 @@ module.exports = {
   },
   buildOptions: {
     out: "docs",
-    baseUrl: "./"
+    baseUrl: process.env.BASE_URL || "./"
   },
 };
