@@ -481,13 +481,13 @@
           "bytesInOutput": 803
         },
         "dist/htmlToImage.js": {
-          "bytesInOutput": 119
+          "bytesInOutput": 143
         },
         "dist/downloadImage.js": {
           "bytesInOutput": 304
         },
         "dist/copyLink.js": {
-          "bytesInOutput": 192
+          "bytesInOutput": 216
         },
         "dist/hashVars.js": {
           "bytesInOutput": 298
@@ -508,7 +508,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 443576
+      "bytes": 443624
     },
     "../~~bundle~~/_snowpack/pkg/html-to-image.js": {
       "imports": [],
