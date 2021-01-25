@@ -107,7 +107,7 @@
       ]
     },
     "dist/PreviewPane.js": {
-      "bytes": 2283,
+      "bytes": 2340,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -453,7 +453,7 @@
           "bytesInOutput": 25220
         },
         "dist/PreviewPane.js": {
-          "bytesInOutput": 1162
+          "bytesInOutput": 1160
         },
         "dist/RoleConfigurator.js": {
           "bytesInOutput": 2528
@@ -510,7 +510,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 294525
+      "bytes": 294523
     },
     "../~~bundle~~/dist/SketchPicker.js": {
       "imports": [
