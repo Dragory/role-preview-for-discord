@@ -18,7 +18,7 @@
       ]
     },
     "_snowpack/pkg/react.js": {
-      "bytes": 348,
+      "bytes": 389,
       "imports": [
         {
           "path": "_snowpack/pkg/common/index-57a74e37.js",
@@ -127,23 +127,6 @@
         }
       ]
     },
-    "_snowpack/pkg/react-color.js": {
-      "bytes": 409205,
-      "imports": [
-        {
-          "path": "_snowpack/pkg/common/index-57a74e37.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "_snowpack/pkg/common/index-ce016b4a.js",
-          "kind": "import-statement"
-        }
-      ]
-    },
     "_snowpack/pkg/react-beautiful-dnd.js": {
       "bytes": 284474,
       "imports": [
@@ -166,18 +149,31 @@
       ]
     },
     "dist/RoleConfigurator.css": {
-      "bytes": 1426,
+      "bytes": 1665,
       "imports": []
     },
-    "dist/RoleConfigurator.js": {
-      "bytes": 4639,
+    "_snowpack/pkg/react-color.js": {
+      "bytes": 409802,
       "imports": [
         {
-          "path": "_snowpack/pkg/react.js",
+          "path": "_snowpack/pkg/common/index-57a74e37.js",
           "kind": "import-statement"
         },
         {
-          "path": "_snowpack/pkg/react-color.js",
+          "path": "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/index-ce016b4a.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "dist/RoleConfigurator.js": {
+      "bytes": 4888,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/react.js",
           "kind": "import-statement"
         },
         {
@@ -187,6 +183,10 @@
         {
           "path": "dist/RoleConfigurator.css",
           "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react-color.js",
+          "kind": "dynamic-import"
         }
       ]
     },
@@ -408,29 +408,25 @@
   },
   "outputs": {
     "../~~bundle~~/dist/index.js": {
-      "imports": [],
+      "imports": [
+        {
+          "path": "../~~bundle~~/chunk.WLNQMG6D.js",
+          "kind": "import-statement"
+        }
+      ],
       "exports": [],
       "inputs": {
-        "_snowpack/pkg/react-color.js": {
-          "bytesInOutput": 140326
-        },
         "_snowpack/pkg/react-beautiful-dnd.js": {
-          "bytesInOutput": 111345
+          "bytesInOutput": 111263
         },
         "_snowpack/env.js": {
           "bytesInOutput": 100
         },
-        "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js": {
-          "bytesInOutput": 482
-        },
-        "_snowpack/pkg/common/index-57a74e37.js": {
-          "bytesInOutput": 6964
-        },
         "_snowpack/pkg/react.js": {
-          "bytesInOutput": 62
+          "bytesInOutput": 76
         },
         "_snowpack/pkg/common/index-8dbeb7e4.js": {
-          "bytesInOutput": 124105
+          "bytesInOutput": 124024
         },
         "_snowpack/pkg/react-dom.js": {
           "bytesInOutput": 0
@@ -444,17 +440,14 @@
         "dist/colorUtils.js": {
           "bytesInOutput": 431
         },
-        "_snowpack/pkg/common/index-ce016b4a.js": {
-          "bytesInOutput": 707
-        },
         "_snowpack/pkg/react-twemoji.js": {
-          "bytesInOutput": 25300
+          "bytesInOutput": 25220
         },
         "dist/PreviewPane.js": {
           "bytesInOutput": 1162
         },
         "dist/RoleConfigurator.js": {
-          "bytesInOutput": 2375
+          "bytesInOutput": 2572
         },
         "dist/RoleConfigurator.css": {
           "bytesInOutput": 0
@@ -469,7 +462,7 @@
           "bytesInOutput": 0
         },
         "_snowpack/pkg/react-switch.js": {
-          "bytesInOutput": 7634
+          "bytesInOutput": 7630
         },
         "dist/Switch.css": {
           "bytesInOutput": 0
@@ -508,7 +501,51 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 443624
+      "bytes": 295006
+    },
+    "../~~bundle~~/_snowpack/pkg/react-color.js": {
+      "imports": [
+        {
+          "path": "../~~bundle~~/chunk.WLNQMG6D.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "default"
+      ],
+      "inputs": {
+        "_snowpack/pkg/react-color.js": {
+          "bytesInOutput": 140325
+        }
+      },
+      "bytes": 140456
+    },
+    "../~~bundle~~/chunk.WLNQMG6D.js": {
+      "imports": [],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j"
+      ],
+      "inputs": {
+        "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js": {
+          "bytesInOutput": 479
+        },
+        "_snowpack/pkg/common/index-57a74e37.js": {
+          "bytesInOutput": 6894
+        },
+        "_snowpack/pkg/common/index-ce016b4a.js": {
+          "bytesInOutput": 701
+        }
+      },
+      "bytes": 8405
     },
     "../~~bundle~~/_snowpack/pkg/html-to-image.js": {
       "imports": [],
@@ -556,13 +593,13 @@
           "bytesInOutput": 1964
         },
         "dist/RoleConfigurator.css": {
-          "bytesInOutput": 1173
+          "bytesInOutput": 1343
         },
         "dist/Switch.css": {
           "bytesInOutput": 28
         }
       },
-      "bytes": 5679
+      "bytes": 5849
     }
   }
 }
