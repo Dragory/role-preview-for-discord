@@ -153,7 +153,7 @@
       "imports": []
     },
     "_snowpack/pkg/react-color.js": {
-      "bytes": 409802,
+      "bytes": 409205,
       "imports": [
         {
           "path": "_snowpack/pkg/common/index-57a74e37.js",
@@ -169,8 +169,17 @@
         }
       ]
     },
+    "dist/SketchPicker.js": {
+      "bytes": 91,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/react-color.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "dist/RoleConfigurator.js": {
-      "bytes": 4888,
+      "bytes": 4833,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -185,7 +194,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "_snowpack/pkg/react-color.js",
+          "path": "dist/SketchPicker.js",
           "kind": "dynamic-import"
         }
       ]
@@ -410,7 +419,7 @@
     "../~~bundle~~/dist/index.js": {
       "imports": [
         {
-          "path": "../~~bundle~~/chunk.WLNQMG6D.js",
+          "path": "../~~bundle~~/chunk.26EOOLCW.js",
           "kind": "import-statement"
         }
       ],
@@ -447,7 +456,7 @@
           "bytesInOutput": 1162
         },
         "dist/RoleConfigurator.js": {
-          "bytesInOutput": 2572
+          "bytesInOutput": 2528
         },
         "dist/RoleConfigurator.css": {
           "bytesInOutput": 0
@@ -501,12 +510,12 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 295006
+      "bytes": 294525
     },
-    "../~~bundle~~/_snowpack/pkg/react-color.js": {
+    "../~~bundle~~/dist/SketchPicker.js": {
       "imports": [
         {
-          "path": "../~~bundle~~/chunk.WLNQMG6D.js",
+          "path": "../~~bundle~~/chunk.26EOOLCW.js",
           "kind": "import-statement"
         }
       ],
@@ -515,12 +524,15 @@
       ],
       "inputs": {
         "_snowpack/pkg/react-color.js": {
-          "bytesInOutput": 140325
+          "bytesInOutput": 139974
+        },
+        "dist/SketchPicker.js": {
+          "bytesInOutput": 35
         }
       },
-      "bytes": 140456
+      "bytes": 140150
     },
-    "../~~bundle~~/chunk.WLNQMG6D.js": {
+    "../~~bundle~~/chunk.26EOOLCW.js": {
       "imports": [],
       "exports": [
         "a",
@@ -531,21 +543,20 @@
         "f",
         "g",
         "h",
-        "i",
-        "j"
+        "i"
       ],
       "inputs": {
         "_snowpack/pkg/common/_commonjsHelpers-8c19dec8.js": {
-          "bytesInOutput": 479
+          "bytesInOutput": 481
         },
         "_snowpack/pkg/common/index-57a74e37.js": {
-          "bytesInOutput": 6894
+          "bytesInOutput": 6898
         },
         "_snowpack/pkg/common/index-ce016b4a.js": {
           "bytesInOutput": 701
         }
       },
-      "bytes": 8405
+      "bytes": 8813
     },
     "../~~bundle~~/_snowpack/pkg/html-to-image.js": {
       "imports": [],
