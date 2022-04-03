@@ -23,7 +23,7 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    out: "docs",
+    out: "dist",
     baseUrl: process.env.BASE_URL || "/"
   },
 };
